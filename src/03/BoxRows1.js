@@ -1,15 +1,23 @@
-import './Box.css';
+//import './Box.css';
+import { useState } from 'react';
 
-const BoxRows = ({ mv }) => {
+const BoxRows1 = ({ mv }) => {
     //const BoxRows = (probs) => { //내가 속성값을 만들어 그 속성값에 해당하는 데이터 전달.
     //const mvlist = [...probs.mv]; // ... : 배열을 나열. // probs.변수명 : 어떠한 값을 컴포넌트에 전달.
+
+    const [footTag, setFootTag] = useState('');
+
+    const showMv = (row) => {
+        console.log(row);
+        setFootTag(row.movieNm);
+    }
 
 
     let trTags = [];
     for (let row of mv) { //배열 순환
         console.log(row.rank, row.movieNm, row.salesAmt, row.rankInten);
 
-        let icon ;
+        let icon;
         let inten = parseInt(row.rankInten)
         if (inten === 0) icon = '⏺';
         else if (inten < 0) icon = '🔼';
@@ -17,7 +25,8 @@ const BoxRows = ({ mv }) => {
 
 
         trTags.push(
-            <tr className = 'mytr' key = {row.movieCd}>
+            //onclick 이벤트를 추가.
+            <tr className='mytr' key={row.movieCd} onClick={() => showMv(row)}>
                 <td>{row.rank}</td>
                 <td>{row.movieNm}</td>
                 <td>{parseInt(row.salesAmt).toLocaleString()}</td>
@@ -30,10 +39,16 @@ const BoxRows = ({ mv }) => {
 
     return (
         <>
-        {trTags}
+            <tbody>{trTags}</tbody>
+            <tfoot>
+                <tr>
+                    <td colSpan={4}>{footTag}</td>
+                </tr>
+            </tfoot>
+
         </>
     );
 
 }
 
-export default BoxRows;
+export default BoxRows1;

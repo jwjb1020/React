@@ -1,6 +1,10 @@
-import BoxRows from './BoxRows' ;
+//import BoxRows from "./BoxRows";
+import BoxRows1 from "./BoxRows1";
+//import './Box.css';
+
 const Box = () => {
-    let mvlist = [
+
+    let mvlist = [ //배열안에 object가 10개 있음
         {
             "rnum": "1",
             "rank": "1",
@@ -203,7 +207,6 @@ const Box = () => {
         }
     ]
 
-    // console.log(mvlist);
     return (
         <main className="container">
             <article>
@@ -217,13 +220,19 @@ const Box = () => {
                             <th scope="col">증감</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <BoxRows mv={mvlist} />
-                    </tbody>
+
+
+                    <tfoot>
+                        <tbody>
+                            {/* <BoxRows mv={mvlist} /> */}
+                            <BoxRows1 mv={mvlist} />
+                        </tbody>
+                    </tfoot>
                 </table>
             </article>
         </main>
     );
+
 }
 
 export default Box;
