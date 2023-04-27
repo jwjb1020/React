@@ -1,14 +1,19 @@
 import { useState } from "react";
-
-const MyClockTime = () => {
+import './MyClock.css';
+import style from './MyClockTime.module.css'
+const MyClockTime1 = () => {
     const [myTime, setMytime] = useState(new Date().toLocaleTimeString());
     //let myTime = new Date().toLocaleTimeString() ;
-    
+
     return (
+
         <footer>
-            <h1>{myTime}</h1>
+            <hgroup>
+                <h1>{myTime}</h1>
+                <h2 id={style.maah2}> {myDate} </h2>
+            </hgroup>
         </footer>
     );
 }
 
-export default MyClockTime;
+export default MyClockTime1;

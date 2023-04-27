@@ -1,4 +1,4 @@
-//import './Box.css';
+import './Box.css';
 import { useState } from 'react';
 
 const BoxRows1 = ({ mv }) => {
@@ -9,7 +9,20 @@ const BoxRows1 = ({ mv }) => {
 
     const showMv = (row) => {
         console.log(row);
-        setFootTag(row.movieNm);
+        let tempTag = <div>
+            <span className='temp1' >[{row.movieCd}]</span>
+            <span className='temp2' >[{row.movieNm}]</span>
+            <span className='temp3' >개봉일 : [{row.openDt}]</span>
+        </div>
+        let tempTag2 = <tr>
+        <td colSpan={2}>[{row.movieCd}]</td>
+        <td colSpan={2}>[{row.movieNm}]</td>
+        <td colSpan={2}>개봉일 : [{row.openDt}]</td>
+    </tr>
+        setFootTag(tempTag2)
+
+        //setFootTag("["+row.movieCd+"]"  + row.movieNm + " 개봉일 :" + row.openDt);
+        
     }
 
 
