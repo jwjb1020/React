@@ -2,9 +2,10 @@ import { useState } from "react";
 import './MyClock.css';
 import style from './MyClockTime.module.css'
 const MyClockTime1 = () => {
-    const [myTime, setMytime] = useState(new Date().toLocaleTimeString());
-    //let myTime = new Date().toLocaleTimeString() ;
-
+    let t = new Date().toLocaleTimeString();
+    let myDate = new Date().toLocaleDateString();
+    const [myTime, setMyTime] = useState(t);
+    setInterval(() => setMyTime(new Date().toLocaleTimeString()), 1000);
     return (
 
         <footer>
