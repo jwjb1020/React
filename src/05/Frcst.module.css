@@ -1,0 +1,49 @@
+.dt{
+    display: inline-flex;
+    background-color: rgb(66, 66, 53);
+    justify-content: center;
+    align-content: center;
+    height: 50px;
+    
+    
+}
+.dt1{ display: inline-flex;
+    background-color: rgb(120, 93, 138);
+    justify-content: center;
+    align-content: center;
+    height: 50px;
+
+}
+
+.it{
+    color: azure;
+}
+.dt:hover {
+    background-color: rgb(120, 93, 138);
+
+}
+
+.sp1 {
+    font-weight: bold;
+}
+.sp2{ 
+    color: blue;
+
+}
+.sp3{
+    color: green;
+}
+.sp4{
+    color: red;
+}
+.header{
+    
+
+}
+.h1{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5%;
+    border: 1px dashed;
+}
