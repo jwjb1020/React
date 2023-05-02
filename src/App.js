@@ -3,14 +3,16 @@ import './App.css';
 //import Mydiv from "./04/MyDiv";
 //import Box from "./03/Box"
 //import MyClock from './02/MyClock';
-import Frcst from './05/Frcst';
+import Taccident from './06/Taccident';
+//import Frcst from './05/Frcst';
 function App() {
   return (
 
    // <Mydiv />
   //<Box/>
     //<MyClock/>
-    <Frcst/>
+   // <Frcst/>
+   <Taccident/>
 
   );
 }
