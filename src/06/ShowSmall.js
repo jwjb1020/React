@@ -1,10 +1,20 @@
-const ShowSmall = ({ seldata,setseldata }) => {
-    const c3arr = setseldata.map((item) => console.log(item))
+const ShowSmall = ({seldata}) => {
+   const tagkey = ['사고건수','사망자수','중상자수','경상자수','부상신고자수']
+    let tags = tagkey.map((k,idx) =>
+    <div key = {'k '+ idx}>
+        {k} : {seldata[k]}
+
+    </div>
+    )
     return (
-        <div className="gird">
-                {c3arr}
-            </div>
-    
+
+
+        <div className = 'grid'>
+            {tags}
+        </div>
+
+
+
 
 
 

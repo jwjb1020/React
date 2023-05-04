@@ -3,8 +3,9 @@ import './App.css';
 //import Mydiv from "./04/MyDiv";
 //import Box from "./03/Box"
 //import MyClock from './02/MyClock';
-import Taccident from './06/Taccident';
+//import Taccident from './06/Taccident';
 //import Frcst from './05/Frcst';
+import Myref from './07/Myref copy';
 function App() {
   return (
 
@@ -12,8 +13,8 @@ function App() {
   //<Box/>
     //<MyClock/>
    // <Frcst/>
-   <Taccident/>
-
+   //<Taccident/>
+   <Myref />
   );
 }
 export default App;

@@ -2,6 +2,7 @@ import ShowBig from './ShowBig';
 import ShowMiddle from './ShowMiddle';
 import ShowSmall from './ShowSmall';
 import data from './dataTaccident.json';
+import style from './Show.module.css';
 import { useState, useEffect } from 'react';
 const Taccident = () => {
 
@@ -71,13 +72,24 @@ const Taccident = () => {
     return (
         <main>
             <header>
-                <ShowBig c1={c1} sel1={sel1} setsel1={setsel1} />
-                <ShowMiddle c2={c2} sel1={sel1} sel2={sel2} setsel2={setsel2} />
+                <ShowBig c1={c1}
+                    sel1={sel1}
+                    setsel1={setsel1} />
+                <ShowMiddle c2={c2}
+                    sel1={sel1}
+                    sel2={sel2}
+                    setsel2={setsel2} />
 
             </header>
             
-                <ShowSmall  />
            
+
+            {seldata && <ShowSmall seldata={seldata} />}
+
+
+          
+
+
 
         </main>
     )
