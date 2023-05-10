@@ -5,7 +5,8 @@ import './App.css';
 //import MyClock from './02/MyClock';
 //import Taccident from './06/Taccident';
 //import Frcst from './05/Frcst';
-import Myref from './07/Myref copy';
+//import Myref from './07/Myref copy';
+import Gallary from './08/Gallary';
 function App() {
   return (
 
@@ -14,7 +15,8 @@ function App() {
     //<MyClock/>
    // <Frcst/>
    //<Taccident/>
-   <Myref />
+   //<Myref />
+   <Gallary/>
   );
 }
 export default App;
