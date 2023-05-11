@@ -4,7 +4,7 @@ import ShowGallary from './ShowGallary';
 const Gallary = () => {
     //usestate를 통해 변수 저장
     const [kw, setKw] = useState();
-    const [GallaryData, setGallaryData] = useState();
+    const [GallaryData, setGallaryData] = useState([]);
     //키워드 input
     const txt1 = useRef();
     useEffect(() => {
@@ -23,8 +23,8 @@ const Gallary = () => {
         console.log(txt1.current.value, encodekw)
 
         getData(encodekw)
-        
-        
+
+
         //https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=SnAt4v2IijJxlhQUyUDmE6dpKigedk8Oa6y9IUKqYvlmaKqX9qZocavzaqXnTxJonAiqfJE6D6GKudC%2FqmZM7Q%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json
         //https://apis.data.go.kr/B551011/PhotoGalleryService1/gallerySearchList1?serviceKey=SnAt4v2IijJxlhQUyUDmE6dpKigedk8Oa6y9IUKqYvlmaKqX9qZocavzaqXnTxJonAiqfJE6D6GKudC%2FqmZM7Q%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&keyword=%eb%b6%80%ec%82%b0&_type=json
         //
@@ -101,11 +101,11 @@ const Gallary = () => {
 
 
                     </article>
-                   
 
-                </div> 
+
+                </div>
                 <div>
-                    < ShowGallary  data = {GallaryData}/>
+                    {GallaryData &&< ShowGallary data={GallaryData} />}
                 </div>
             </form>
         </main>

@@ -1,33 +1,43 @@
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import styles from './Gallary.module.css'
 const ShowGallary = ({ data }) => {
-    const [footTag, setFootTag] = useState();
+    console.log(data)
 
-    //let trTags = [];
-    //배열 순환
-    useEffect(() => {
-        if (data) {
-            showData(data);
-        }
-    }, [data]);
+    //tags 값들 끊어서 배열 만들기
 
-    const showData =(data) =>{
+
+    const showPhoto = data.map((item, index) => {
+        const tagItem = item.galSearchKeyword;
+        const tagItemArr = tagItem.split(',')
         
-    setFootTag(console.log(`${data.galTitle}, ${data.galWebImageUrl}, ${data.galPhotographyLocation}, ${data.alSearchKeyword}`))
-};
-    
-    
-   
+        return (
+        <article className={styles.photos} key={index}>
+            <h2> {item.galTitle}</h2>
+            <img src={item.galWebImageUrl}>
+
+            </img>
+            <div className={styles.tags}>
+                {tagItemArr.map((tag,tagIdx)=>
+                 <span key={tagIdx}> # {tag} </span> )
+                } 
+            </div>
+
+        </article>)
+
+    });
 
 
 
-  
+
 
 
     return (
-        <>
-            {footTag && <span>{footTag}</span>}
-        </>
-    )
+
+        <div className={styles.gridcontainer}>
+            {showPhoto}
+
+        </div>
+    );
 
 }
 export default ShowGallary;
