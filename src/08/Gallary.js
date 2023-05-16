@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from './Gallary.module.css'
 import ShowGallary from './ShowGallary';
+import GallaryPage from './GallaryPage';
 const Gallary = () => {
     //usestate를 통해 변수 저장
     const [kw, setKw] = useState();
     const [GallaryData, setGallaryData] = useState([]);
+    const [pageKey, setPageKey] = useState(1);
+    
     //키워드 input
     const txt1 = useRef();
     useEffect(() => {
@@ -39,8 +42,15 @@ const Gallary = () => {
 
     }
 
-    // 여기는 인풋타입에 입력되는 값
+    
 
+    const clear = (e) => {
+
+    }
+    //fetch함수 만들기(데이터가져오기)
+    const getData = (encodekw) => {
+        // 여기는 인풋타입에 입력되는 값
+    
     //관광공사 api 접속할 때 쓰는 url
     let firstUrl = "https://apis.data.go.kr/B551011/PhotoGalleryService1/gallerySearchList1?";
     //서비스키
@@ -48,7 +58,7 @@ const Gallary = () => {
     //한 페이지 결과수
     let showPage = "numOfRows=10&";
     //페이지 번호
-    let showpageNo = "pageNo=1&";
+    let showpageNo = "pageNo=" + pageKey + "&";
     //os구분
     let MobileOS = "MobileOS=ETC&";
     //서비스 명 
@@ -60,12 +70,6 @@ const Gallary = () => {
 
     //응답 메세지 형식
     let endType = "_type=json";
-
-    const clear = (e) => {
-
-    }
-    //fetch함수 만들기(데이터가져오기)
-    const getData = (encodekw) => {
         let keyword = "keyword=" + encodekw + "&";
         console.log(keyword)
         let url = firstUrl + serviceKey + showPage + showpageNo + MobileOS + MobileApp + arrange + keyword + endType;
@@ -80,6 +84,9 @@ const Gallary = () => {
 
     }
 
+    let no = "검색된 키워드가 없습니다. 다시 입력해주세요";
+   
+
     return (
         <main>
             <form>
@@ -91,7 +98,7 @@ const Gallary = () => {
 
                         <div className={styles.Div1}>
 
-                            <input ref={txt1} type="text" id="txt1" placeholder='입력해주세요!' required />
+                            <input ref={txt1} type="text" id="txt1" placeholder='키워드를 입력해주세요!' required />
                             <div className={styles.btDiv}>
                                 <button onClick={(e) => show(e)} >확인</button>
                                 <button onClick={(e) => clear(e)}>취소</button>
@@ -105,8 +112,17 @@ const Gallary = () => {
 
                 </div>
                 <div>
-                    {GallaryData &&< ShowGallary data={GallaryData} />}
+
+
+                    {GallaryData && GallaryData.length > 0 ? (
+                        <ShowGallary data={GallaryData} />
+                    ) : (GallaryData ? null : <div className={styles.no}><h2 >{no}</h2></div>
+                    )}
+
                 </div>
+               {GallaryData && GallaryData.length> 0 ?(
+                <GallaryPage show = {show} pageKey = {pageKey} setPageKey = {setPageKey}/>):null}
+
             </form>
         </main>
     );

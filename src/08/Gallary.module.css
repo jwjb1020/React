@@ -2,11 +2,20 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    height: 60px;
 }
 
 .btDiv {
-
     display: flex;
+}
+
+.btDiv button {
+
+    width: 90px;
+    height: auto;
+    background-color: rgb(194, 134, 243);
+    border-color: aliceblue;
+    margin: 0;
 }
 
 .gridcontainer {
@@ -21,6 +30,7 @@
     padding: 10px;
 
 }
+
 .tags {
     margin-top: 10px;
 }
@@ -32,4 +42,9 @@
     margin-right: 10px;
     margin-bottom: 10px;
     color: rgb(53, 49, 56);
+}
+
+.no {
+    display: flex;
+    justify-content: center;
 }
