@@ -6,7 +6,9 @@ import './App.css';
 //import Taccident from './06/Taccident';
 //import Frcst from './05/Frcst';
 //import Myref from './07/Myref copy';
-import Gallary from './08/Gallary';
+//import Gallary from './08/Gallary';
+import Fcst from './1234/Fcst';
+//import Fcst from './09/Fcst';
 function App() {
   return (
 
@@ -16,7 +18,8 @@ function App() {
    // <Frcst/>
    //<Taccident/>
    //<Myref />
-   <Gallary/>
+   //<Gallary/>
+   <Fcst/>
   );
 }
 export default App;
