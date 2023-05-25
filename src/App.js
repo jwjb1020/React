@@ -7,7 +7,8 @@ import './App.css';
 //import Frcst from './05/Frcst';
 //import Myref from './07/Myref copy';
 //import Gallary from './08/Gallary';
-import Fcst from './1234/Fcst';
+//import Fcst from './1234/Fcst';
+import FcstUltra from './1234/FcstUltra';
 //import Fcst from './09/Fcst';
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
    //<Taccident/>
    //<Myref />
    //<Gallary/>
-   <Fcst/>
+   <FcstUltra />
   );
 }
 export default App;
